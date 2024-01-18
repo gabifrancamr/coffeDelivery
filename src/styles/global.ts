@@ -14,8 +14,14 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: ${(props) => props.theme.background};
-        color: ${(props) => props.theme.white};
+        color: ${(props) => props.theme['base-text']};
         --webkit-font-smoothing: antialiased;
+    }
+
+    h1 {
+        font-family: 'Baloo 2', sans-serif;
+        color: ${(props) => props.theme['base-title']};
+        line-height: 1.3;
     }
 
     body, input, textarea, button {

@@ -1,4 +1,11 @@
-import { HomeContent, Intro, IntroText, Items } from './styles'
+import {
+  HomeContent,
+  Intro,
+  IntroText,
+  Items,
+  CoffeArea,
+  CoffeOptions,
+} from './styles'
 import introImage from '../../assets/Intro.svg'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
@@ -46,6 +53,23 @@ export function Home() {
         </IntroText>
         <img src={introImage} alt="café" />
       </Intro>
+
+      <CoffeArea>
+        <h1>Nossos cafés</h1>
+        <CoffeOptions>
+          <div>
+            <div>
+              <span>tradicional</span>
+              <h1>Expresso Tradicional</h1>
+              <p>O tradicional café feito com água quente e grãos moídos</p>
+            </div>
+            <div>
+              <span>preço</span>
+              <div>quantidade</div>
+            </div>
+          </div>
+        </CoffeOptions>
+      </CoffeArea>
     </HomeContent>
   )
 }

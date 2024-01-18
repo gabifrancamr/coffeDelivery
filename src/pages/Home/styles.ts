@@ -6,14 +6,12 @@ export const HomeContent = styled.main`
 
 export const Intro = styled.div`
   display: flex;
+  gap: 1rem;
 `
 
 export const IntroText = styled.div`
   h1 {
-    font-family: 'Baloo 2', sans-serif;
-    color: ${(props) => props.theme['base-title']};
     font-size: 3rem;
-    line-height: 1.3;
     font-weight: bolder;
   }
 
@@ -60,3 +58,14 @@ export const Items = styled.div`
     }
   }
 `
+
+export const CoffeArea = styled.div`
+  margin-top: 4rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+`
+
+export const CoffeOptions = styled.div``
+// img, tag, título, descricao
