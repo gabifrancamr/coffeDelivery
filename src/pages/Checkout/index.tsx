@@ -3,25 +3,41 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
+  Minus,
   Money,
+  Plus,
+  Trash,
 } from 'phosphor-react'
 import {
-  AddressAndPayment,
+  BaseStyle,
+  BoldFont,
   CheckoutArea,
+  ConfirmationButton,
   ContentCheckbox,
   InputArea,
   MapIcon,
   OptionsPayment,
-  PaymentIcon,
+  PriceArea,
+  PriceCoffe,
+  PurpleIcon,
+  QuantityAndButton,
+  RemoveButton,
+  SelectedCoffe,
+  SmallFont,
+  StyleSelectCoffe,
   Title,
 } from './styles'
+
+import cafe from '../../assets/Type=Café com Leite.svg'
+import { QuantityArea } from '../Home/styles'
+import { NavLink } from 'react-router-dom'
 
 export function Checkout() {
   return (
     <CheckoutArea>
       <ContentCheckbox>
         <h1>Complete seu pedido</h1>
-        <AddressAndPayment>
+        <BaseStyle>
           <Title>
             <MapIcon>
               <MapPinLine size={24} />
@@ -44,13 +60,13 @@ export function Checkout() {
             <input type="text" className="cidade" placeholder="Cidade" />
             <input type="text" className="uf" placeholder="UF" />
           </InputArea>
-        </AddressAndPayment>
+        </BaseStyle>
 
-        <AddressAndPayment>
+        <BaseStyle>
           <Title>
-            <PaymentIcon>
+            <PurpleIcon>
               <CurrencyDollar size={24} />
-            </PaymentIcon>
+            </PurpleIcon>
             <div>
               <h2>Pagamento</h2>
               <span>
@@ -60,29 +76,102 @@ export function Checkout() {
           </Title>
           <OptionsPayment>
             <div>
-              <PaymentIcon>
+              <PurpleIcon>
                 <CreditCard size={15} />
-              </PaymentIcon>
+              </PurpleIcon>
               <span>cartão de crédito</span>
             </div>
             <div>
-              <PaymentIcon>
+              <PurpleIcon>
                 <Bank size={15} />
-              </PaymentIcon>
+              </PurpleIcon>
               <span>cartão de débito</span>
             </div>
             <div>
-              <PaymentIcon>
+              <PurpleIcon>
                 <Money size={15} />
-              </PaymentIcon>
+              </PurpleIcon>
               <span>dinheiro</span>
             </div>
           </OptionsPayment>
-        </AddressAndPayment>
+        </BaseStyle>
       </ContentCheckbox>
 
       <ContentCheckbox>
         <h1>Cafés selecionados</h1>
+        <StyleSelectCoffe>
+          <SelectedCoffe>
+            <div>
+              <img src={cafe} alt="" />
+            </div>
+            <div>
+              <p>Expresso Tradicional</p>
+              <QuantityAndButton>
+                <QuantityArea>
+                  <button>
+                    <Minus />
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <Plus />
+                  </button>
+                </QuantityArea>
+                <RemoveButton>
+                  <PurpleIcon>
+                    <Trash size={18} />
+                  </PurpleIcon>
+                  <span>remover</span>
+                </RemoveButton>
+              </QuantityAndButton>
+            </div>
+            <PriceCoffe>R$ 9,90</PriceCoffe>
+          </SelectedCoffe>
+
+          <SelectedCoffe>
+            <div>
+              <img src={cafe} alt="" />
+            </div>
+            <div>
+              <p>Expresso Tradicional</p>
+              <QuantityAndButton>
+                <QuantityArea>
+                  <button>
+                    <Minus />
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <Plus />
+                  </button>
+                </QuantityArea>
+                <RemoveButton>
+                  <PurpleIcon>
+                    <Trash size={18} />
+                  </PurpleIcon>
+                  <span>remover</span>
+                </RemoveButton>
+              </QuantityAndButton>
+            </div>
+            <PriceCoffe>R$ 9,90</PriceCoffe>
+          </SelectedCoffe>
+
+          <PriceArea>
+            <div>
+              <SmallFont>Total Itens</SmallFont>
+              <span>R$ 9,90</span>
+            </div>
+            <div>
+              <SmallFont>Entrega</SmallFont>
+              <span>R$ 5,00</span>
+            </div>
+            <BoldFont>
+              <span>Total</span>
+              <span>R$ 14,90</span>
+            </BoldFont>
+            <NavLink to="/success">
+              <ConfirmationButton>Confirmar Pedido</ConfirmationButton>
+            </NavLink>
+          </PriceArea>
+        </StyleSelectCoffe>
       </ContentCheckbox>
     </CheckoutArea>
   )

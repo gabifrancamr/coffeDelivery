@@ -103,6 +103,9 @@ export const QuantityArea = styled.div`
   border-radius: 6px;
   font-weight: bold;
   color: ${(props) => props.theme['base-title']};
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
 
   button {
     display: flex;
