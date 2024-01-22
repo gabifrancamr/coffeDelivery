@@ -79,13 +79,41 @@ export const Price = styled.div`
   h1 {
     font-size: 1.5rem;
     font-weight: bolder;
+    color: ${(props) => props.theme['base-text']};
   }
 `
 
 export const InfoToBuy = styled.div`
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+
   div {
     display: flex;
+    align-items: center;
+    padding: 0.5rem;
   }
+`
+
+export const QuantityArea = styled.div`
+  background-color: ${(props) => props.theme['base-button']};
+  gap: 0.4rem;
+  border-radius: 6px;
+  font-weight: bold;
+  color: ${(props) => props.theme['base-title']};
+
+  button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    background-color: transparent;
+    color: ${(props) => props.theme.purple};
+    cursor: pointer;
+  }
+`
+
+export const ShoppingCartIcon = styled.div`
+  background-color: ${(props) => props.theme['purple-dark']};
+  color: ${(props) => props.theme.white};
+  border-radius: 6px;
 `

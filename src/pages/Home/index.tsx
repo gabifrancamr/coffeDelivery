@@ -7,8 +7,10 @@ import {
   CoffeAreaPrice,
   Price,
   InfoToBuy,
+  ShoppingCartIcon,
+  QuantityArea,
 } from './styles'
-import { ShoppingCart } from 'phosphor-react'
+import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import tradicional from '../../assets/Image.svg'
 import { IntroArea } from './Intro'
 
@@ -32,12 +34,18 @@ export function Home() {
                 <h1>9,90</h1>
               </Price>
               <InfoToBuy>
-                <div>
-                  <button>-</button>
+                <QuantityArea>
+                  <button>
+                    <Minus />
+                  </button>
                   <span>1</span>
-                  <button>+</button>
-                </div>
-                <ShoppingCart />
+                  <button>
+                    <Plus />
+                  </button>
+                </QuantityArea>
+                <ShoppingCartIcon>
+                  <ShoppingCart size={18} weight="fill" />
+                </ShoppingCartIcon>
               </InfoToBuy>
             </CoffeAreaPrice>
           </CoffeDiv>
