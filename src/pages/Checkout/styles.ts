@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const CheckoutArea = styled.div`
   margin-top: 4rem;
+  display: flex;
+  gap: 2rem;
 `
 
-export const CompleteOrderArea = styled.div`
+export const ContentCheckbox = styled.div`
   h1 {
     font-size: 1.125rem;
   }
@@ -86,6 +88,28 @@ export const InputArea = styled.div`
   }
 `
 
-export const MoneyIcon = styled.div`
+export const PaymentIcon = styled.span`
   color: ${(props) => props.theme.purple};
+`
+
+export const OptionsPayment = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: ${(props) => props.theme['base-button']};
+    padding: 1rem;
+    border-radius: 6px;
+    width: 11rem;
+    cursor: pointer;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
 `
