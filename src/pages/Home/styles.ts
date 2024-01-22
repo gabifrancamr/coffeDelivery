@@ -13,7 +13,8 @@ export const CoffeArea = styled.div`
 `
 
 export const CoffeOptions = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 4rem;
 `
@@ -47,6 +48,7 @@ export const CoffeInfo = styled.div`
     line-height: 1.3;
     font-weight: bold;
     margin: 1rem;
+    text-transform: uppercase;
   }
 
   h1 {
@@ -116,4 +118,5 @@ export const ShoppingCartIcon = styled.div`
   background-color: ${(props) => props.theme['purple-dark']};
   color: ${(props) => props.theme.white};
   border-radius: 6px;
+  cursor: pointer;
 `
