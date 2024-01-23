@@ -17,7 +17,17 @@ import {
 } from './styles'
 
 export function Order() {
-  const { cartItems, totalPrice } = useContext(CartContext)
+  const { cartItems, totalPrice, decreaseQuantity, increaseQuantity } =
+    useContext(CartContext)
+
+  function handleIncreaseQuantity(id: string) {
+    increaseQuantity(id)
+  }
+
+  function handleDecreaseQuantity(id: string) {
+    decreaseQuantity(id)
+  }
+
   return (
     <ContentCheckbox>
       <h1>Cafés selecionados</h1>
@@ -31,11 +41,11 @@ export function Order() {
               <p>{item.name}</p>
               <QuantityAndButton>
                 <QuantityArea>
-                  <button>
+                  <button onClick={() => handleDecreaseQuantity(item.id)}>
                     <Minus />
                   </button>
                   <span>{item.quantity}</span>
-                  <button>
+                  <button onClick={() => handleIncreaseQuantity(item.id)}>
                     <Plus />
                   </button>
                 </QuantityArea>
