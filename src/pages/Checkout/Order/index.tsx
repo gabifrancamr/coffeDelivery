@@ -1,5 +1,4 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
-import { ContentCheckbox, PurpleIcon } from '../styles'
 import { QuantityArea } from '../../Home/styles'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
@@ -14,6 +13,8 @@ import {
   SelectedCoffe,
   SmallFont,
   StyleSelectCoffe,
+  ContentCheckbox,
+  PurpleIcon,
 } from './styles'
 
 export function Order() {

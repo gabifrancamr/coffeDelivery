@@ -5,6 +5,18 @@ export const BoldFont = styled.div`
   font-weight: bold;
   color: ${(props) => props.theme['base-subtitle']};
 `
+
+export const ContentCheckbox = styled.div`
+  width: 100%;
+  h1 {
+    font-size: 1.125rem;
+  }
+`
+
+export const PurpleIcon = styled.span`
+  color: ${(props) => props.theme.purple};
+`
+
 export const ConfirmationButton = styled.button`
   width: 100%;
   background-color: ${(props) => props.theme.yellow};
