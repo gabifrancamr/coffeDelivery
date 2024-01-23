@@ -12,16 +12,58 @@ import {
 } from './styles'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { IntroArea } from './Intro'
-import { AllCoffes } from './AllCoffes'
+import { AllCoffes, Coffee } from './AllCoffes'
+import { useState } from 'react'
+
+interface NewCoffeeInCartProps {
+  id: string
+  name: string
+  quantity: number
+  price: number
+  image: string
+}
 
 export function Home() {
+  const [cartItems, setCartItems] = useState<NewCoffeeInCartProps[]>([])
+  const [dataCoffes, setDataCoffes] = useState<Coffee[]>(AllCoffes)
+
+  function handleIncreaseQuantity(id: string) {
+    setDataCoffes((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
+    )
+  }
+
+  function handleDecreaseQuantity(id: string) {
+    setDataCoffes((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+          : item,
+      ),
+    )
+  }
+
+  function handleAddCoffeeToCard(coffe: Coffee) {
+    const newCoffeeInCart: NewCoffeeInCartProps = {
+      id: coffe.id,
+      name: coffe.name,
+      image: coffe.image,
+      price: coffe.price,
+      quantity: coffe.quantity,
+    }
+
+    setCartItems((state) => [...state, newCoffeeInCart])
+  }
+
   return (
     <HomeContent>
       <IntroArea />
       <CoffeArea>
         <h1>Nossos cafés</h1>
         <CoffeOptions>
-          {AllCoffes.map((coffe) => (
+          {dataCoffes.map((coffe) => (
             <CoffeDiv key={coffe.id}>
               <CoffeInfo>
                 <img src={coffe.image} alt="café tradicional" />
@@ -37,14 +79,16 @@ export function Home() {
                 <InfoToBuy>
                   <QuantityArea>
                     <button>
-                      <Minus />
+                      <Minus onClick={() => handleDecreaseQuantity(coffe.id)} />
                     </button>
-                    <span>1</span>
-                    <button>
+                    <span>{coffe.quantity}</span>
+                    <button onClick={() => handleIncreaseQuantity(coffe.id)}>
                       <Plus />
                     </button>
                   </QuantityArea>
-                  <ShoppingCartIcon>
+                  <ShoppingCartIcon
+                    onClick={() => handleAddCoffeeToCard(coffe)}
+                  >
                     <ShoppingCart size={18} weight="fill" />
                   </ShoppingCartIcon>
                 </InfoToBuy>
