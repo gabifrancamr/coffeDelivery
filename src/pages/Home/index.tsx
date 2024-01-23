@@ -12,49 +12,24 @@ import {
 } from './styles'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { IntroArea } from './Intro'
-import { AllCoffes, Coffee } from './AllCoffes'
-import { useState } from 'react'
-
-interface NewCoffeeInCartProps {
-  id: string
-  name: string
-  quantity: number
-  price: number
-  image: string
-}
+import { Coffee } from './AllCoffes'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartProvider'
 
 export function Home() {
-  const [cartItems, setCartItems] = useState<NewCoffeeInCartProps[]>([])
-  const [dataCoffes, setDataCoffes] = useState<Coffee[]>(AllCoffes)
+  const { dataCoffes, addCoffeeToCard, decreaseQuantity, increaseQuantity } =
+    useContext(CartContext)
 
   function handleIncreaseQuantity(id: string) {
-    setDataCoffes((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
-      ),
-    )
+    increaseQuantity(id)
   }
 
   function handleDecreaseQuantity(id: string) {
-    setDataCoffes((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity - 1) }
-          : item,
-      ),
-    )
+    decreaseQuantity(id)
   }
 
   function handleAddCoffeeToCard(coffe: Coffee) {
-    const newCoffeeInCart: NewCoffeeInCartProps = {
-      id: coffe.id,
-      name: coffe.name,
-      image: coffe.image,
-      price: coffe.price,
-      quantity: coffe.quantity,
-    }
-
-    setCartItems((state) => [...state, newCoffeeInCart])
+    addCoffeeToCard(coffe)
   }
 
   return (
