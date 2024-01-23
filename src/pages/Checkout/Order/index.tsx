@@ -17,7 +17,7 @@ import {
 } from './styles'
 
 export function Order() {
-  const { cartItems } = useContext(CartContext)
+  const { cartItems, totalPrice } = useContext(CartContext)
   return (
     <ContentCheckbox>
       <h1>Cafés selecionados</h1>
@@ -54,7 +54,7 @@ export function Order() {
         <PriceArea>
           <div>
             <SmallFont>Total Itens</SmallFont>
-            <span>R$ 9,90</span>
+            <span>R$ {totalPrice}</span>
           </div>
           <div>
             <SmallFont>Entrega</SmallFont>
