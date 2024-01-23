@@ -38,3 +38,13 @@ export const Localization = styled.div`
     color: ${(props) => props.theme.purple};
   }
 `
+
+export const ShopCart = styled.div`
+  position: relative;
+`
+
+export const QuantityItems = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+`
