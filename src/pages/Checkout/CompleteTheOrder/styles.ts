@@ -36,7 +36,7 @@ export const Title = styled.div`
 export const MapIcon = styled.div`
   color: ${(props) => props.theme['yellow-dark']};
 `
-export const InputArea = styled.div`
+export const InputArea = styled.form`
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:

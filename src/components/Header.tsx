@@ -15,7 +15,7 @@ export function Header() {
       <Actions>
         <Localization>
           <MapPin size={24} weight="fill" />
-          <span>Porto Alegre, RS</span>
+          <span>Brasil</span>
         </Localization>
         <NavLink to="/checkout">
           {quantityTotal > 0 ? (

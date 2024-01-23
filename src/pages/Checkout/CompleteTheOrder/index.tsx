@@ -14,8 +14,11 @@ import {
   ContentCheckbox,
   PurpleIcon,
 } from './styles'
+import { useFormContext } from 'react-hook-form'
 
 export function CompleteTheOrder() {
+  const { register } = useFormContext()
+
   return (
     <ContentCheckbox>
       <h1>Complete seu pedido</h1>
@@ -30,17 +33,55 @@ export function CompleteTheOrder() {
           </div>
         </Title>
         <InputArea>
-          <input type="number" className="cep" placeholder="CEP" />
-          <input type="text" className="rua" placeholder="Rua" />
-          <input type="number" className="num" placeholder="Número" />
+          <input
+            type="number"
+            className="cep"
+            placeholder="CEP"
+            required
+            {...register('cep', { valueAsNumber: true })}
+          />
           <input
             type="text"
+            className="rua"
+            placeholder="Rua"
+            required
+            {...register('rua')}
+          />
+          <input
+            type="number"
+            className="num"
+            placeholder="Número"
+            required
+            {...register('num', { valueAsNumber: true })}
+          />
+          <input
+            type="text"
+            required
             className="complemento"
             placeholder="Complemento"
+            {...register('complemento')}
           />
-          <input type="text" className="bairro" placeholder="Bairro" />
-          <input type="text" className="cidade" placeholder="Cidade" />
-          <input type="text" className="uf" placeholder="UF" />
+          <input
+            type="text"
+            className="bairro"
+            placeholder="Bairro"
+            required
+            {...register('bairro')}
+          />
+          <input
+            type="text"
+            className="cidade"
+            placeholder="Cidade"
+            required
+            {...register('cidade')}
+          />
+          <input
+            type="text"
+            className="uf"
+            placeholder="UF"
+            required
+            {...register('uf')}
+          />
         </InputArea>
       </BaseStyle>
 

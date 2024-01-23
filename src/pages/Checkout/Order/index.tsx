@@ -1,7 +1,7 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 import { QuantityArea } from '../../Home/styles'
 import { NavLink } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../../contexts/CartProvider'
 import {
   BoldFont,
@@ -16,8 +16,23 @@ import {
   ContentCheckbox,
   PurpleIcon,
 } from './styles'
+import { useFormContext } from 'react-hook-form'
 
 export function Order() {
+  const [frete, setFrete] = useState(0)
+  const { watch } = useFormContext()
+
+  const city = watch('cidade')
+
+  console.log(city)
+
+  useEffect(() => {
+    console.log('Valor de cidade:', city)
+    if (city) {
+      setFrete(5)
+    }
+  }, [city])
+
   const {
     cartItems,
     totalPrice,
@@ -74,7 +89,7 @@ export function Order() {
           </div>
           <div>
             <SmallFont>Entrega</SmallFont>
-            <span>R$ 5,00</span>
+            <span>R$ {frete},00</span>
           </div>
           <BoldFont>
             <span>Total</span>
