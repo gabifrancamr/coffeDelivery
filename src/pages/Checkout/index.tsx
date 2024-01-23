@@ -3,34 +3,20 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
-  Minus,
   Money,
-  Plus,
-  Trash,
 } from 'phosphor-react'
 import {
   BaseStyle,
-  BoldFont,
   CheckoutArea,
-  ConfirmationButton,
   ContentCheckbox,
   InputArea,
   MapIcon,
   OptionsPayment,
-  PriceArea,
-  PriceCoffe,
   PurpleIcon,
-  QuantityAndButton,
-  RemoveButton,
-  SelectedCoffe,
-  SmallFont,
-  StyleSelectCoffe,
   Title,
 } from './styles'
 
-import cafe from '../../assets/Type=Café com Leite.svg'
-import { QuantityArea } from '../Home/styles'
-import { NavLink } from 'react-router-dom'
+import { Order } from './Order'
 
 export function Checkout() {
   return (
@@ -97,82 +83,7 @@ export function Checkout() {
         </BaseStyle>
       </ContentCheckbox>
 
-      <ContentCheckbox>
-        <h1>Cafés selecionados</h1>
-        <StyleSelectCoffe>
-          <SelectedCoffe>
-            <div>
-              <img src={cafe} alt="" />
-            </div>
-            <div>
-              <p>Expresso Tradicional</p>
-              <QuantityAndButton>
-                <QuantityArea>
-                  <button>
-                    <Minus />
-                  </button>
-                  <span>1</span>
-                  <button>
-                    <Plus />
-                  </button>
-                </QuantityArea>
-                <RemoveButton>
-                  <PurpleIcon>
-                    <Trash size={18} />
-                  </PurpleIcon>
-                  <span>remover</span>
-                </RemoveButton>
-              </QuantityAndButton>
-            </div>
-            <PriceCoffe>R$ 9,90</PriceCoffe>
-          </SelectedCoffe>
-
-          <SelectedCoffe>
-            <div>
-              <img src={cafe} alt="" />
-            </div>
-            <div>
-              <p>Expresso Tradicional</p>
-              <QuantityAndButton>
-                <QuantityArea>
-                  <button>
-                    <Minus />
-                  </button>
-                  <span>1</span>
-                  <button>
-                    <Plus />
-                  </button>
-                </QuantityArea>
-                <RemoveButton>
-                  <PurpleIcon>
-                    <Trash size={18} />
-                  </PurpleIcon>
-                  <span>remover</span>
-                </RemoveButton>
-              </QuantityAndButton>
-            </div>
-            <PriceCoffe>R$ 9,90</PriceCoffe>
-          </SelectedCoffe>
-
-          <PriceArea>
-            <div>
-              <SmallFont>Total Itens</SmallFont>
-              <span>R$ 9,90</span>
-            </div>
-            <div>
-              <SmallFont>Entrega</SmallFont>
-              <span>R$ 5,00</span>
-            </div>
-            <BoldFont>
-              <span>Total</span>
-              <span>R$ 14,90</span>
-            </BoldFont>
-            <NavLink to="/success">
-              <ConfirmationButton>Confirmar Pedido</ConfirmationButton>
-            </NavLink>
-          </PriceArea>
-        </StyleSelectCoffe>
-      </ContentCheckbox>
+      <Order />
     </CheckoutArea>
   )
 }
