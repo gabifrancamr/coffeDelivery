@@ -18,8 +18,14 @@ export function Header() {
           <span>Porto Alegre, RS</span>
         </Localization>
         <NavLink to="/checkout">
-          <ShoppingCart size={24} weight="fill" />
-          <QuantityItems>{quantityTotal}</QuantityItems>
+          {quantityTotal > 0 ? (
+            <>
+              <ShoppingCart size={24} weight="fill" />
+              <QuantityItems>{quantityTotal}</QuantityItems>
+            </>
+          ) : (
+            <ShoppingCart size={24} weight="fill" />
+          )}
         </NavLink>
       </Actions>
     </HeaderContent>
