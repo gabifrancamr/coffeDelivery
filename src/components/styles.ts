@@ -20,6 +20,7 @@ export const Actions = styled.div`
     align-items: center;
     color: ${(props) => props.theme['yellow-dark']};
     cursor: pointer;
+    position: relative;
   }
 `
 
@@ -39,12 +40,14 @@ export const Localization = styled.div`
   }
 `
 
-export const ShopCart = styled.div`
-  position: relative;
-`
-
 export const QuantityItems = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -0.5rem;
+  right: -0.5rem;
+
+  background-color: ${(props) => props.theme['yellow-dark']};
+  color: ${(props) => props.theme.white};
+  font-size: 0.875rem;
+  border-radius: 50%;
+  padding: 0.1rem 0.4rem;
 `
