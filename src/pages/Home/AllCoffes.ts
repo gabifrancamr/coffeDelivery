@@ -1,4 +1,12 @@
-export const AllCoffes = [
+interface Coffee {
+  id: number
+  name: string
+  tag: string
+  description: string
+  image: string
+}
+
+export const AllCoffes: Coffee[] = [
   {
     id: 1,
     name: 'Expresso Tradicional',
