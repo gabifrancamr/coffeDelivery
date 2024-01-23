@@ -17,8 +17,13 @@ import {
 } from './styles'
 
 export function Order() {
-  const { cartItems, totalPrice, decreaseQuantity, increaseQuantity } =
-    useContext(CartContext)
+  const {
+    cartItems,
+    totalPrice,
+    decreaseQuantity,
+    increaseQuantity,
+    totalPriceOfEachItem,
+  } = useContext(CartContext)
 
   function handleIncreaseQuantity(id: string) {
     increaseQuantity(id)
@@ -57,7 +62,7 @@ export function Order() {
                 </RemoveButton>
               </QuantityAndButton>
             </div>
-            <PriceCoffe>R$ {item.price}</PriceCoffe>
+            <PriceCoffe>R$ {totalPriceOfEachItem(item)}</PriceCoffe>
           </SelectedCoffe>
         ))}
 

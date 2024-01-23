@@ -17,6 +17,7 @@ interface CartContextType {
   increaseQuantity: (id: string) => void
   decreaseQuantity: (id: string) => void
   addCoffeeToCard: (coffe: Coffee) => void
+  totalPriceOfEachItem: (coffee: NewCoffeeInCartProps) => number
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -39,7 +40,17 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     0,
   )
 
+  function totalPriceOfEachItem(coffee: NewCoffeeInCartProps) {
+    return coffee.price * coffee.quantity
+  }
+
   function increaseQuantity(id: string) {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
+    )
+
     setDataCoffes((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
@@ -48,6 +59,13 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }
 
   function decreaseQuantity(id: string) {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+          : item,
+      ),
+    )
     setDataCoffes((prevItems) =>
       prevItems.map((item) =>
         item.id === id
@@ -75,6 +93,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         dataCoffes,
         quantityTotal,
         totalPrice,
+        totalPriceOfEachItem,
         addCoffeeToCard,
         decreaseQuantity,
         increaseQuantity,
