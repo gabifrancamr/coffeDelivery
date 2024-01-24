@@ -2,7 +2,7 @@ import { MapPin, ShoppingCart } from 'phosphor-react'
 import logo from '../assets/Logo.svg'
 import { Actions, HeaderContent, Localization, QuantityItems } from './styles'
 import { NavLink } from 'react-router-dom'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../contexts/CartProvider'
 import { useFormContext } from 'react-hook-form'
 
