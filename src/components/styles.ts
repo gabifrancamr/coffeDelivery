@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-export const HeaderContent = styled.header`
+export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //padding: 2rem 10rem;
+  background-color: ${({ theme }) => theme.colors['base-background']};
 `
 
 export const Actions = styled.div`
@@ -13,12 +13,12 @@ export const Actions = styled.div`
   gap: 0.75rem;
 
   a {
-    background-color: ${(props) => props.theme['yellow-light']};
+    background-color: ${({ theme }) => theme.colors['brand-yellow-light']};
     padding: 0.5rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
-    color: ${(props) => props.theme['yellow-dark']};
+    color: ${({ theme }) => theme.colors['brand-yellow-dark']};
     cursor: pointer;
   }
 `
@@ -26,15 +26,16 @@ export const Actions = styled.div`
 export const Localization = styled.div`
   display: flex;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
   gap: 0.25rem;
   padding: 0.5rem;
-  background-color: ${(props) => props.theme['purple-light']};
-  color: ${(props) => props.theme['purple-dark']};
+  background-color: ${({ theme }) => theme.colors['brand-purple-light']};
+  color: ${({ theme }) => theme.colors['brand-purple-dark']};
   line-height: 1.3;
   border-radius: 6px;
 
   &:first-child {
-    color: ${(props) => props.theme.purple};
+    // ícone de localização
+    color: ${({ theme }) => theme.colors['brand-purple']};
   }
 `
