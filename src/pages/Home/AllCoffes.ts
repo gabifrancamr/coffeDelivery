@@ -15,7 +15,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
     image: '../../../public/Type=Expresso.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -24,7 +24,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Expresso diluído, menos intenso que o tradicional',
     image: '../../../public/Image.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -33,7 +33,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Café expresso tradicional com espuma cremosa',
     image: '../../../public/Type=Expresso Cremoso.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -42,7 +42,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Bebida preparada com café expresso e cubos de gelo',
     image: '../../../public/Type=Café Gelado.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -51,7 +51,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
     image: '../../../public/Type=Café com Leite.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -61,7 +61,7 @@ export const AllCoffes: Coffee[] = [
     description:
       'Uma dose de café expresso com o dobro de leite e espuma cremosa',
     image: '../../../public/Type=Latte.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -71,7 +71,7 @@ export const AllCoffes: Coffee[] = [
     description:
       'Bebida com canela feita de doses iguais de café, leite e espuma',
     image: '../../../public/Type=Capuccino.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -81,7 +81,7 @@ export const AllCoffes: Coffee[] = [
     description:
       'Café expresso misturado com um pouco de leite quente e espuma',
     image: '../../../public/Type=Macchiato.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -90,7 +90,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
     image: '../../../public/Type=Mochaccino.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -99,7 +99,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
     image: '../../../public/Type=Chocolate Quente.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -109,7 +109,7 @@ export const AllCoffes: Coffee[] = [
     description:
       'Drink gelado de café expresso com rum, creme de leite e hortelã',
     image: '../../../public/Type=Cubano.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -119,7 +119,7 @@ export const AllCoffes: Coffee[] = [
     description:
       'Drink gelado de café expresso com rum, creme de leite e hortelã',
     image: '../../../public/Type=Havaiano.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -128,7 +128,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Bebida preparada com grãos de café árabe e especiarias',
     image: '../../../public/Type=Árabe.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
   {
@@ -137,7 +137,7 @@ export const AllCoffes: Coffee[] = [
     tag: 'TRADICIONAL',
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
     image: '../../../public/Type=Irlandês.svg',
-    price: 9.9,
+    price: 9.99,
     quantity: 1,
   },
 ]

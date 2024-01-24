@@ -49,7 +49,7 @@ export function Home() {
               <CoffeAreaPrice>
                 <Price>
                   <span>R$</span>
-                  <h1>9,90</h1>
+                  <h1>{coffe.price}</h1>
                 </Price>
                 <InfoToBuy>
                   <QuantityArea>

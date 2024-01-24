@@ -19,14 +19,14 @@ import {
 import { useFormContext } from 'react-hook-form'
 
 export function Order() {
-  const [frete, setFrete] = useState(0)
+  const [shipping, setShipping] = useState(0)
   const { watch } = useFormContext()
 
   const city = watch('cidade')
 
   useEffect(() => {
     if (city) {
-      setFrete(5)
+      setShipping(5.99)
     }
   }, [city])
 
@@ -86,11 +86,15 @@ export function Order() {
           </div>
           <div>
             <SmallFont>Entrega</SmallFont>
-            <span>R$ {frete},00</span>
+            <span>R$ {shipping}</span>
           </div>
           <BoldFont>
             <span>Total</span>
-            <span>R$ 14,90</span>
+            {shipping > 0 ? (
+              <span>R$ {(totalPrice + 5.99).toFixed(2)}</span>
+            ) : (
+              <span>R$ {totalPrice}</span>
+            )}
           </BoldFont>
           <NavLink to="/success">
             <ConfirmationButton>Confirmar Pedido</ConfirmationButton>
