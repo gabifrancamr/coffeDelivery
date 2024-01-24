@@ -24,10 +24,7 @@ export function Order() {
 
   const city = watch('cidade')
 
-  console.log(city)
-
   useEffect(() => {
-    console.log('Valor de cidade:', city)
     if (city) {
       setFrete(5)
     }
