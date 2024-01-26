@@ -5,6 +5,11 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.colors['base-background']};
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  padding: 2rem 0;
 `
 
 export const Actions = styled.div`
