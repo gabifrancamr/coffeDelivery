@@ -25,7 +25,7 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
-  const formattedPrice = FormatMoney(coffee.price) 
+  const formattedPrice = FormatMoney(coffee.price)
   return (
     <CoffeeCardContainer>
       <img src={coffee.photo} alt="" />
