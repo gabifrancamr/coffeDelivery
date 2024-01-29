@@ -8,6 +8,7 @@ export interface CartItem extends Coffee {
 
 interface CartContextType {
   cartItems: CartItem[]
+  cartQuantity: number
   addCoffeeToCard: (coffee: CartItem) => void
 }
 
@@ -19,6 +20,8 @@ interface CartContextProviderProps {
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
+
+  const cartQuantity = cartItems.length
 
   function addCoffeeToCard(coffee: CartItem) {
     const coffeeAlreadyExistsInCard = cartItems.findIndex(
@@ -39,7 +42,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   console.log(cartItems)
 
   return (
-    <CartContext.Provider value={{ cartItems, addCoffeeToCard }}>
+    <CartContext.Provider value={{ cartItems, addCoffeeToCard, cartQuantity }}>
       {children}
     </CartContext.Provider>
   )

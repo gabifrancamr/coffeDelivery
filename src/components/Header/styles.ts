@@ -41,10 +41,27 @@ export const Localization = styled(HeaderButton)`
 export const ShoppingCartButton = styled(HeaderButton)`
   background-color: ${({ theme }) => theme.colors['brand-yellow-light']};
   cursor: pointer;
+  position: relative;
+  color: ${({ theme }) => theme.colors['brand-yellow-dark']};
 
   a {
-    color: ${({ theme }) => theme.colors['brand-yellow-dark']};
     display: flex;
     align-items: center;
+  }
+
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+    color: ${({ theme }) => theme.colors['base-white']};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
   }
 `
