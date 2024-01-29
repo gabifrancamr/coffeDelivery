@@ -33,6 +33,8 @@ export const ContentContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.colors['base-button']};
   transition: 0.4s;
 
+  cursor: pointer;
+
   svg {
     color: ${({ theme }) => theme.colors['brand-purple']};
   }
