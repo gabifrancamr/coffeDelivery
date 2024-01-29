@@ -11,7 +11,7 @@ import {
 import { QuantityInput } from '../../../../components/QuantityInput'
 import { FormatMoney } from '../../../../utils/formatMoney'
 
-interface Coffee {
+export interface Coffee {
   id: number
   tags: string[]
   name: string
