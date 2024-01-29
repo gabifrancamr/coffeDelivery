@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -11,7 +11,11 @@ export const InputWrapper = styled.div`
   }
 `
 
-export const InputStyleContainer = styled.input`
+interface InputStyleContainerProps {
+  hasError: boolean
+}
+
+export const InputStyleContainer = styled.div<InputStyleContainerProps>`
   height: 2.625rem;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors['base-button']};
@@ -24,17 +28,15 @@ export const InputStyleContainer = styled.input`
   justify-content: space-between;
   overflow: hidden;
 
-  padding: 0 0.75rem;
-  font-size: 0.75rem;
-  color: ${({ theme }) => theme.colors['base-text']};
-
-  &::placeholder {
-    color: ${({ theme }) => theme.colors['base-label']};
-  }
-
   &:focus-within {
     border-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
   }
+
+  ${({ theme, hasError }) =>
+    hasError &&
+    css`
+      border-color: ${({ theme }) => theme.colors['base-error']};
+    `}
 `
 
 export const InputStyled = styled.input`

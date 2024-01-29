@@ -37,4 +37,10 @@ export const GlobalStyle = createGlobalStyle`
   input[type="number"] {
     -moz-appearance: textfield;
   }
+
+  @media (max-width: 1000px) {
+    html {
+        font-size: 87.5%;
+    }
+}
 `

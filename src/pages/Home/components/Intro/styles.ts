@@ -21,6 +21,13 @@ export const IntroContent = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
+
+  @media (max-width: 1000px) {
+    img {
+      width: 330px;
+      height: auto;
+    }
+  }
 `
 
 export const IntroTitle = styled(TitleText)`
@@ -33,4 +40,8 @@ export const BenefitsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
   margin-top: 4.125rem;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
 `
