@@ -38,6 +38,15 @@ export const AddressFormContainer = styled.div`
   .complement {
     grid-column: span 2;
   }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 5rem;
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const PaymentMethodOptionsContainer = styled.div`
@@ -48,5 +57,10 @@ export const PaymentMethodOptionsContainer = styled.div`
   > p {
     grid-column: span 3;
     color: ${({ theme }) => theme.colors['base-error']};
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
   }
 `

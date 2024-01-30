@@ -15,4 +15,8 @@ export const CoffeeList = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @media (max-width: 484px) {
+    grid-template-columns: 1fr;
+  }
 `

@@ -7,4 +7,8 @@ export const LayoutStyles = styled.div`
   @media (max-width: 1000px) {
     padding: 0rem 4rem;
   }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
 `
