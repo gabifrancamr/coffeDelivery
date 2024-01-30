@@ -14,6 +14,13 @@ export const OrderConfirmedContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      justify-content: center;
+      img {
+        display: none;
+      }
+    }
   }
 `
 
@@ -22,7 +29,7 @@ export const OrderDetailsContainer = styled.div`
   border-radius: 6px 36px 6px 36px;
   position: relative;
   background: ${({ theme }) => theme.colors['base-background']};
-  min-width: 32rem;
+  min-width: 31rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
