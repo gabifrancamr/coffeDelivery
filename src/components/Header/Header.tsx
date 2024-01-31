@@ -7,8 +7,10 @@ import {
   ShoppingCartButton,
 } from './styles'
 import { NavLink } from 'react-router-dom'
+import { useCart } from '../../hooks/UseCart'
 
 export function Header() {
+  const { cartQuantity } = useCart()
   return (
     <HeaderContainer>
       <NavLink to="">
@@ -19,11 +21,12 @@ export function Header() {
           <MapPin size={24} weight="fill" />
           <span>Porto Alegre, RS</span>
         </Localization>
-        <ShoppingCartButton>
-          <NavLink to="/checkout">
+        <NavLink to="/checkout">
+          <ShoppingCartButton>
+            {cartQuantity >= 1 && <span>{cartQuantity}</span>}
             <ShoppingCart size={24} weight="fill" />
-          </NavLink>
-        </ShoppingCartButton>
+          </ShoppingCartButton>
+        </NavLink>
       </Actions>
     </HeaderContainer>
   )
