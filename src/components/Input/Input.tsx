@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <InputWrapper className={className}>
         <InputStyleContainer {...props} ref={ref} />
-        {error && <RegularText>{error}</RegularText>}
+        {error && <RegularText size="s">{error}</RegularText>}
       </InputWrapper>
     )
   },

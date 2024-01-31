@@ -17,16 +17,16 @@ const formValidationSchema = zod.object({
 
 export type OrderType = zod.infer<typeof formValidationSchema>
 
-type CompleteOrderType = OrderType
+type ConfirmOrderValidation = OrderType
 
 export function CompleteOrderPage() {
-  const formValidation = useForm<CompleteOrderType>({
+  const formValidation = useForm<ConfirmOrderValidation>({
     resolver: zodResolver(formValidationSchema),
   })
 
   const { handleSubmit } = formValidation
 
-  function handleCompleteOrder(data: CompleteOrderType) {
+  function handleCompleteOrder(data: ConfirmOrderValidation) {
     console.log(data)
   }
 
