@@ -10,6 +10,10 @@ interface CartContextTypes {
   cartItems: CartItem[]
   cartQuantity: number
   addCoffeeToCart: (coffee: CartItem) => void
+  changeQuantityCoffee: (
+    coffeeId: number,
+    type: 'increase' | 'decrease',
+  ) => void
 }
 
 export const CartContext = createContext({} as CartContextTypes)
@@ -39,8 +43,30 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(newCoffee)
   }
 
+  function changeQuantityCoffee(
+    coffeeId: number,
+    type: 'increase' | 'decrease',
+  ) {
+    const thereIsThisCoffeeInCart = cartItems.findIndex(
+      (item) => item.id === coffeeId,
+    )
+
+    const newCoffee = produce(cartItems, (draft) => {
+      if (thereIsThisCoffeeInCart >= 0) {
+        draft[thereIsThisCoffeeInCart].quantity =
+          type === 'increase'
+            ? draft[thereIsThisCoffeeInCart].quantity + 1
+            : draft[thereIsThisCoffeeInCart].quantity - 1
+      }
+    })
+
+    setCartItems(newCoffee)
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, cartQuantity, addCoffeeToCart }}>
+    <CartContext.Provider
+      value={{ cartItems, cartQuantity, addCoffeeToCart, changeQuantityCoffee }}
+    >
       {children}
     </CartContext.Provider>
   )
