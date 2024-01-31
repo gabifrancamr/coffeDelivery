@@ -8,7 +8,7 @@ import { ConfirmationSectionContainer } from './styles'
 const DELIVERY_PRICE = 3.5
 
 export function ConfirmationSection() {
-  const { cartTotalPrice } = useCart()
+  const { cartTotalPrice, cartQuantity } = useCart()
   const priceWithDelivery = cartTotalPrice + DELIVERY_PRICE
 
   const formattedDelivery = FormatMoney(DELIVERY_PRICE)
@@ -33,7 +33,7 @@ export function ConfirmationSection() {
           R$ {formattedPriceWithDelivery}
         </RegularText>
       </div>
-      <Button text="confirmar pedido" />
+      <Button text="confirmar pedido" disabled={cartQuantity < 1} />
     </ConfirmationSectionContainer>
   )
 }
