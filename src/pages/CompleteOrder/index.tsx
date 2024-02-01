@@ -5,6 +5,12 @@ import { CompleteOrderContainer } from './styles'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+enum PaymentMethods {
+  credit = 'credit',
+  debit = 'debit',
+  money = 'money',
+}
+
 const formValidationSchema = zod.object({
   cep: zod.string().min(1, 'Informe o cep'),
   street: zod.string().min(1, 'Informe o Rua'),
@@ -13,6 +19,11 @@ const formValidationSchema = zod.object({
   neighborhood: zod.string().min(1, 'Informe o Bairro'),
   city: zod.string().min(1, 'Informe a Cidade'),
   state: zod.string().min(1, 'Informe a UF'),
+  paymentMethod: zod.nativeEnum(PaymentMethods, {
+    errorMap: () => {
+      return { message: 'Informe o método de pagamento' }
+    },
+  }),
 })
 
 export type OrderType = zod.infer<typeof formValidationSchema>
