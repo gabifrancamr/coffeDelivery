@@ -496,7 +496,7 @@ Error generating stack: `+o.message+`
   &:hover {
     background: ${({theme:e})=>e.colors["base-hover"]};
   }
-`;function Wx({coffee:e}){const{changeCartItemQuantity:t,removeCartItem:n}=Ii();function r(){t(e.id,"increase")}function i(){t(e.id,"decrease")}function o(){n(e.id)}const s=e.price*e.quantity,l=so(s);return v.jsxs($x,{children:[v.jsxs("div",{children:[v.jsx("img",{src:e.photo,alt:""}),v.jsxs("div",{children:[v.jsx(We,{color:"subtitle",children:e.name}),v.jsxs(Ix,{children:[v.jsx(A1,{size:"small",quantity:e.quantity,onIncrease:r,onDecrease:i}),v.jsxs(Mx,{onClick:o,children:[v.jsx(S2,{size:16}),"REMOVER"]})]})]})]}),v.jsxs("p",{children:["R$ $",l]})]})}const Ax=Q.button`
+`;function Wx({coffee:e}){const{changeCartItemQuantity:t,removeCartItem:n}=Ii();function r(){t(e.id,"increase")}function i(){t(e.id,"decrease")}function o(){n(e.id)}const s=e.price*e.quantity,l=so(s);return v.jsxs($x,{children:[v.jsxs("div",{children:[v.jsx("img",{src:`/coffeeDelivery/imgCoffees/${e.photo}`,alt:""}),v.jsxs("div",{children:[v.jsx(We,{color:"subtitle",children:e.name}),v.jsxs(Ix,{children:[v.jsx(A1,{size:"small",quantity:e.quantity,onIncrease:r,onDecrease:i}),v.jsxs(Mx,{onClick:o,children:[v.jsx(S2,{size:16}),"REMOVER"]})]})]})]}),v.jsxs("p",{children:["R$ $",l]})]})}const Ax=Q.button`
   padding: 0.75rem 2.8rem;
   color: ${({theme:e})=>e.colors["base-white"]};
   font-weight: 700;
