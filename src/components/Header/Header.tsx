@@ -13,15 +13,15 @@ export function Header() {
   const { cartQuantity } = useCart()
   return (
     <HeaderContainer>
-      <NavLink to="/coffeDelivery">
-        <img src={logo} alt="Logo do CoffeDelivery" />
+      <NavLink to="/coffeeDelivery">
+        <img src={logo} alt="Logo do coffeeDelivery" />
       </NavLink>
       <Actions>
         <Localization>
           <MapPin size={24} weight="fill" />
           <span>Porto Alegre, RS</span>
         </Localization>
-        <NavLink to="/coffeDelivery/checkout">
+        <NavLink to="/coffeeDelivery/checkout">
           <ShoppingCartButton>
             {cartQuantity >= 1 && <span>{cartQuantity}</span>}
             <ShoppingCart size={24} weight="fill" />

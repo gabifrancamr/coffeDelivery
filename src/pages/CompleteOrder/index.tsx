@@ -44,7 +44,7 @@ export function CompleteOrderPage() {
   const navigate = useNavigate()
 
   function handleConfirmOrder(data: ConfirmOrderFormData) {
-    navigate('/coffeDelivery/orderConfirmed', {
+    navigate('/coffeeDelivery/orderConfirmed', {
       state: data,
     })
 
