@@ -4,17 +4,22 @@
 
 Link: https://gabifrancamr.github.io/coffeeDelivery
 
-In this challenge, I developed an application to manage a shopping cart for a fictional coffee shop, which includes the following features:
+Neste desafio, desenvolvi uma aplicação para gerenciar um carrinho de compras de uma cafetaria fictícia, que inclui as seguintes funcionalidades:
 
-* Listing of products (coffees) available for purchase
-* Adding a specific quantity of items to the cart
-* Increasing or decreasing the quantity of items in the cart
-* Form for the user to fill in their address
-* Displaying the total number of items in the cart in the Header
-* Displaying the total value of the items in the cart multiplied by the unit price
-* Displaying form information.
+* Listagem de produtos (cafés) disponíveis para compra
+* Adicionar uma quantidade específica de itens ao carrinho
+* Aumentar ou diminuir a quantidade de itens no carrinho
+*Formulário para o usuário preencher seu endereço
+* Exibir o número total de itens no carrinho no cabeçalho
+*Exibir o valor total dos itens no carrinho multiplicado pelo preço unitário
+* Exibir informações do formulário.
 
-In this project, I used Styled Components, React Router, React Hook Form, as well as React hooks such as useContext, useState, and useEffect.
+Nesse projeto usei 
+* Typescript
+* Styled Components
+* React Router
+* React Hook Form
+* além de hooks do React, como: useContext, useState e useEffect
 
 https://github.com/gabifrancamr/coffeeDelivery/assets/95250838/5403b11f-b42d-454f-b1ae-11fdc763fbd6
 
